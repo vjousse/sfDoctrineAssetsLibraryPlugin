@@ -1,0 +1,39 @@
+sfAssetFolder:
+  tableName: sf_asset_folder
+  
+  columns:
+    name: string(255)
+    relative_path: 
+      type: string(255)
+      unique: string(255)
+    static_scope: integer
+  relations:
+    sfAssets:
+      class: sfAsset
+      local: id
+      foreign: folder_id
+      type: many
+  actAs:
+    NestedSet:
+    #Timestampable:
+
+sfAsset:
+  tableName: sf_asset
+    
+  columns:
+    folder_id: integer
+    filename: string(255)
+    description: clob
+    author: string(255)
+    copyright: string(255)
+    type: string(255)
+    filesize: integer
+
+  actAs:
+    Timestampable:
+
+  relations:
+    sfAssetFolder:
+      type: one
+      local: folder_id
+      foreign: id

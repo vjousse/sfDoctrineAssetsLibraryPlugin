@@ -1,0 +1,252 @@
+#sf_asset_container
+{
+  padding-right: 280px;
+}
+
+#sf_asset_container form {
+    margin:5px;
+}
+#sf_asset_container a img,:link img,:visited img { border: none; }
+
+#sf_asset_container a:link, #sf_admin_container a:visited
+{
+  text-decoration: none;
+}
+
+#sf_asset_container a:hover
+{
+  text-decoration: underline;
+}
+
+#sf_asset_container td
+{
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  background-color: #fff;
+}
+
+#sf_asset_container p
+{
+  margin-bottom: 5px;
+}
+
+#sf_asset_container #sf_asset_assets
+{
+  padding-top: 10px;
+  clear: left;
+}
+
+#sf_asset_container h1
+{
+  margin: 8px 0;
+  padding: 3px;
+  padding-left: 0px;
+  color: #555;
+  font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+  font-size: 25px;
+}
+
+#sf_asset_container input
+{
+  padding: 3px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  border: 1px solid #ddd;
+  vertical-align:middle;
+}
+
+#sf_asset_container label
+{
+  display: block;
+  padding: 0 1em 3px 0;
+  text-align: left;
+  color: #666;
+  font-weight: normal !important;
+}
+
+span.crumb
+{
+  padding: 0 5px;
+}
+
+#sf_asset_container span.wrap_space
+{
+  font-size:0px;
+}
+
+#sf_asset_container #sf_admin_edit_form
+{
+  margin-top: 5px;
+}
+
+#sf_asset_container #sf_admin_edit_form label
+{
+  float:left;
+  width:14.2em;
+}
+
+#sf_asset_container .form-row
+{
+  padding: 10px;
+}
+
+#sf_asset_container #sf_asset_upload_form
+{
+  width: 240px;
+  margin-right: 10px;
+}
+
+#sf_asset_container #sf_asset_mkdir_form
+{
+  width: 150px;
+}
+
+#sf_asset_container fieldset
+{
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+}
+
+#sf_asset_container .float-left
+{
+  float: left;
+}
+
+#sf_asset_container .float-right
+{
+  float: right;
+}
+
+#sf_asset_container ul.sf_asset_actions
+{
+  display: block;
+  margin: 0;
+  list-style-type: none;
+  text-align: right;
+}
+
+#sf_asset_container ul.sf_asset_actions a
+{
+  color: #333;
+}
+
+#sf_asset_container ul.sf_asset_actions li
+{
+  list-style-type: none;
+  display: inline;
+}
+
+#sf_asset_container ul.sf_asset_actions input
+{
+  padding: 3px 3px 3px 20px;
+  color: #333;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  border: 0px;
+  border-right: 4px solid #999;
+  background-color: #ffc;
+  cursor: hand;
+  cursor: pointer;
+}
+
+#sf_asset_container .sf_asset_action_add_file
+{
+  background: url(../images/filenew.png) no-repeat 3px 2px;
+  border-right: 4px solid #73B65A !important;
+}
+
+#sf_asset_container .sf_asset_action_add_folder
+{
+  background: url(../images/folder_new.png) no-repeat 3px 2px;
+  border-right: 4px solid #73B65A !important;
+}
+
+#sf_asset_container .sf_asset_filters li
+{
+  list-style-type: none;
+}
+
+#sf_asset_container .assetImage
+{
+  float: left;
+  padding: 5px;
+  width: 84px;
+  height: 130px;
+  margin: 5px;
+  text-align: center;
+}
+
+#sf_asset_container .assetComment
+{
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding-top: 3px;
+}
+
+#sf_asset_container .assetComment .details
+{
+  text-align: right;
+  color: #999;
+}
+
+#sf_asset_container .thumbnails
+{
+  width: auto !important;
+  width: 0;
+  height: 84px;
+}
+
+#sf_asset_container .thumbnails a:hover img
+{
+  background: #eee;
+}
+
+#sf_asset_container img.deleteImage
+{
+  visibility: hidden;
+}
+
+#sf_asset_container .assetImage:hover img.deleteImage
+{
+  visibility: visible;
+}
+
+#sf_asset_container .search_result .details
+{
+  padding-top: 5px;
+}
+
+#thumbs
+{
+  position: absolute;
+  right: 40px;
+}
+
+#sf_asset_bar
+{
+  width: 250px;
+  float: right;
+  border: solid 1px #eed;
+  padding: 10px;
+  margin: 5px;
+}
+
+#sf_asset_bar form
+{
+  margin: 0;
+}
+
+#sf_asset_bar .form-row .content
+{
+  margin: 2px 0 5px 0;
+}
+
+#tinyMCE_insert_form img.thumb
+{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

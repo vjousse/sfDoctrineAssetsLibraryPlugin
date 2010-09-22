@@ -1,0 +1,66 @@
+Installation
+============
+
+
+  * Get code from the svn
+     $ svn co .... http://svn.symfony-project.com/plugins/swDoctrineAssetsLibraryPlugin/branches/sf1.2
+
+  * You will need to install/enable some other plugins
+      [php]
+      $this->enablePlugins('sfDoctrinePlugin','sfProtoculousPlugin','swDoctrineAssetsLibraryPlugin','swFormExtraPlugin','swToolboxPlugin');
+
+
+  * Set settings value in the general app.yml
+      
+      [yml]
+      all:
+        swDoctrineAssetsLibrary:
+          upload_dir: uploads
+          check_type:       false                                        # Set to true if you want to restrict the type of assets
+          types:            ['image', txt, archive, pdf, xls, doc, ppt]  # Accepted asset types if check_type is true
+          thumbnail_dir:    thumbnail                                    # Where the image thumbnails are stored
+          use_ImageMagick:  true                                         # Set to true if you have the convert command
+          thumbnails:                                                    # Name and size (in pixels) of the thumbnails created at upload
+            small:                                                       # Displayed in the list page
+              width: 84
+              height: 84
+              shave: true                                                # Cut strips to constraint the image size
+            large:                                                       # Displayed in the details page
+              width: 194
+              height: 152
+              
+            gallery_index:
+              width: 200
+              height: 150
+              shave: shave_bottom
+              
+            gallery_view:
+              width: 600
+              height: 480 
+              
+          search_pager_size: 20                    # Number of resuts per page
+          mass_upload_size:  5                     # Number of file upload controls displayed in the mass upload form
+          routes_register: false
+  
+  * rebuild the model and the form
+     $ ./symfony doctrine:build-models
+     $ ./symfony doctrine:build-forms
+     $ ./symfont doctrine:build-sql                # insert the corresponding SQL
+     $ ./symfony cc
+     
+  * Insert the SQL into your database
+  
+      [sql]
+      CREATE TABLE sf_asset (id BIGINT AUTO_INCREMENT, folder_id BIGINT, filename VARCHAR(255), description LONGTEXT, author VARCHAR(255), copyright VARCHAR(255), type VARCHAR(255), filesize BIGINT, created_at DATETIME, updated_at DATETIME, INDEX folder_id_idx (folder_id), PRIMARY KEY(id)) ENGINE = INNODB;
+      CREATE TABLE sf_asset_folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255), relative_path VARCHAR(255) UNIQUE, static_scope BIGINT, lft INT, rgt INT, level SMALLINT, PRIMARY KEY(id)) ENGINE = INNODB;
+      ALTER TABLE sf_asset ADD FOREIGN KEY (folder_id) REFERENCES sf_asset_folder(id);
+  
+  * create the database root node
+      
+      $ ./symfony sfAsset:create-root
+
+  * If you want to use the jQuery widget, don't forget to include the javascript file in your module view.yml
+      [yml]
+      all:
+        javascripts: [/swDoctrineAssetsLibraryPlugin/js/assetSelectJQuery]
+      
