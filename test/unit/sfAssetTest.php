@@ -33,16 +33,16 @@ try
   $sfAsset->setsfAssetFolder(sfAssetFolderTable::getRoot());
   $t->isa_ok($sfAsset->getsfAssetFolder(), 'sfAssetFolder', 'sfAsset can have root as folder');
   $sfAsset->setFilename('filename.jpg');
-  $t->is($sfAsset->getRelativePath(), sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media').  DIRECTORY_SEPARATOR . 'filename.jpg', 'getRelativePath() gives correct result');
+  $t->is($sfAsset->getRelativePath(), sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media').  DIRECTORY_SEPARATOR . 'filename.jpg', 'getRelativePath() gives correct result');
 
   
   sfConfig::set('sf_web_dir', '/tmp');
-  sfConfig::set('app_swDoctrineAssetsLibrary_upload_dir','media');
-  $t->is($sfAsset->getFullPath(), sfConfig::get('sf_web_dir'). DIRECTORY_SEPARATOR . sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media'). DIRECTORY_SEPARATOR .'filename.jpg','getFullPath() gives complete path'); 
-  $t->is($sfAsset->getFullPath('large'), sfConfig::get('sf_web_dir'). DIRECTORY_SEPARATOR . sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'thumbnail/large_filename.jpg','getFullPath() gives correct thumbnail path'); 
+  sfConfig::set('app_sfDoctrineAssetsLibrary_upload_dir','media');
+  $t->is($sfAsset->getFullPath(), sfConfig::get('sf_web_dir'). DIRECTORY_SEPARATOR . sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media'). DIRECTORY_SEPARATOR .'filename.jpg','getFullPath() gives complete path'); 
+  $t->is($sfAsset->getFullPath('large'), sfConfig::get('sf_web_dir'). DIRECTORY_SEPARATOR . sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'thumbnail/large_filename.jpg','getFullPath() gives correct thumbnail path'); 
   
-  $t->is($sfAsset->getUrl(),DIRECTORY_SEPARATOR .sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'filename.jpg','getUrl() gives correct url');
-  $t->is($sfAsset->getUrl('small'),DIRECTORY_SEPARATOR . sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'thumbnail/small_filename.jpg','getUrl() gives correct thumbnail url');
+  $t->is($sfAsset->getUrl(),DIRECTORY_SEPARATOR .sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'filename.jpg','getUrl() gives correct url');
+  $t->is($sfAsset->getUrl('small'),DIRECTORY_SEPARATOR . sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media').DIRECTORY_SEPARATOR .'thumbnail/small_filename.jpg','getUrl() gives correct thumbnail url');
 
   $assets_path = dirname(__FILE__).'/../assets/';
   $test_asset = $assets_path . 'raikkonen.jpg';

@@ -1,6 +1,6 @@
 <?php if ($folder->getNode()->isRoot()): ?>
 <div class="form-row">
-  <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/images.png', 'align=top') ?>
+  <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/images.png', 'align=top') ?>
   <?php echo link_to(__('Mass upload', null, 'sfAsset'), 'sfAsset/massUpload') ?>
 </div>
 <?php endif ?>
@@ -9,7 +9,7 @@
   <?php echo $quickAddForm['folder_id'] ?>
   
   <label for="new_directory">
-    <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/filenew.png', 'align=top') ?>
+    <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/filenew.png', 'align=top') ?>
     <a onclick="document.getElementById('input_new_file').style.display='block'; return false;" href="#"><?php echo __('Add a file', null, 'sfAsset'); ?></a>
   </label>
   
@@ -38,7 +38,7 @@ echo $quickAddForm['_csrf_token'];
 
 <form action="<?php echo url_for('sfAsset/createFolder') ?>" method="POST">
   <label for="new_directory">
-    <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_add.png', 'align=top') ?>
+    <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_add.png', 'align=top') ?>
     <a onclick="document.getElementById('input_new_directory').style.display='block'; return false;" href="#"><?php echo __('Add a subfolder', null, 'sfAsset'); ?></a>
   </label>
   <div id="input_new_directory" style="display: none">
@@ -72,7 +72,7 @@ echo $createFolderForm['_csrf_token'];
 
   <form action="<?php echo url_for('sfAsset/renameFolder?id='.$folder->getId()) ?>" method="POST">
     <label for="new_directory">
-      <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_edit.png', 'align=top') ?>
+      <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_edit.png', 'align=top') ?>
       <a onclick="document.getElementById('input_new_name').style.display='block'; return false;" href="#"><?php echo __('Rename folder', null, 'sfAsset'); ?></a>
     </label>
     <div class="content" id="input_new_name" style="display: none">
@@ -85,7 +85,7 @@ echo $createFolderForm['_csrf_token'];
   
   <form action="<?php echo url_for('sfAsset/moveFolder?id='.$folder->getId()) ?>" method="POST">
     <label for="new_directory">
-      <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_edit.png', 'align=top') ?>
+      <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_edit.png', 'align=top') ?>
       <a onclick="document.getElementById('input_move_folder').style.display='block'; return false;" href="#"><?php echo __('Move folder', null, 'sfAsset'); ?></a>
      
     </label>
@@ -98,7 +98,7 @@ echo $createFolderForm['_csrf_token'];
   </form>
 
   <div class="form-row">
-    <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_delete.png', 'align=top') ?>
+    <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_delete.png', 'align=top') ?>
     <?php echo link_to(__('Delete folder', null, 'sfAsset'), 'sfAsset/deleteFolder?id='.$folder->getId(), array(
       'post' => true,
       'confirm' => __('Are you sure?', null, 'sfAsset'),

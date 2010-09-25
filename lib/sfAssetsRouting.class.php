@@ -34,7 +34,7 @@ class sfAssetsRouting
         array(
           'module'    => 'sfAsset',
           'action'    => 'list',
-          //'dir'       => sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media')
+          //'dir'       => sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media')
         ),
         array(),
         array(

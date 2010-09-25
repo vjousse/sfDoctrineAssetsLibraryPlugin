@@ -9,7 +9,7 @@
     <div class="details">
       <?php echo $sf_asset->getFilesize() ?> Ko
       <?php if (!$sf_user->hasAttribute('popup', 'sf_admin/sf_asset/navigation')): ?>
-        <?php echo link_to(image_tag('/swDoctrineAssetsLibraryPlugin/images/delete.png', 'class=deleteImage align=top'), 'sfAsset/deleteAsset?id='.$sf_asset->getId(), array('title' => __('Supprimer'), 'confirm' => __('Etes-vous sûr ?'))); ?>
+        <?php echo link_to(image_tag('/sfDoctrineAssetsLibraryPlugin/images/delete.png', 'class=deleteImage align=top'), 'sfAsset/deleteAsset?id='.$sf_asset->getId(), array('title' => __('Supprimer'), 'confirm' => __('Etes-vous sûr ?'))); ?>
       <?php endif; ?>
     </div>
   </div>

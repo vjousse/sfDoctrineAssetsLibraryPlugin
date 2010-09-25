@@ -2,7 +2,7 @@
 <p><?php echo button_to_function(__('Back to the list', null, 'sfAsset'), 'history.back()') ?></p>
 
 <script src="/js/tiny_mce/tiny_mce_popup.js"></script>
-<script src="/js/tiny_mce/plugins/swDoctrineAssetsLibraryPlugin/jscripts/sfAssetsLibrary.js"></script>
+<script src="/js/tiny_mce/plugins/sfDoctrineAssetsLibraryPlugin/jscripts/sfAssetsLibrary.js"></script>
 <?php echo form_tag('', 'id=tinyMCE_insert_form') ?>
   <fieldset>
     <?php echo asset_image_tag($sf_asset, 'large', array('class' => 'thumb')) ?>

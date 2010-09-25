@@ -7,7 +7,7 @@
 
 <form action="<?php echo url_for('sfAsset/createFolder') ?>" method="POST">
   <label for="new_directory">
-    <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_add.png', 'align=top') ?>
+    <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_add.png', 'align=top') ?>
     <a onclick="document.getElementById('input_new_directory').style.display='block'; return false;" href="#"><?php echo __('Add a subfolder', null, 'sfAsset'); ?></a>
 
   </label>

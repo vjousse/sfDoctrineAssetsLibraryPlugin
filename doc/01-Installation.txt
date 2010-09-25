@@ -3,18 +3,18 @@ Installation
 
 
   * Get code from the svn
-     $ svn co .... http://svn.symfony-project.com/plugins/swDoctrineAssetsLibraryPlugin/branches/sf1.2
+     $ svn co .... http://svn.symfony-project.com/plugins/sfDoctrineAssetsLibraryPlugin/branches/sf1.2
 
   * You will need to install/enable some other plugins
       [php]
-      $this->enablePlugins('sfDoctrinePlugin','sfProtoculousPlugin','swDoctrineAssetsLibraryPlugin','swFormExtraPlugin','swToolboxPlugin');
+      $this->enablePlugins('sfDoctrinePlugin','sfProtoculousPlugin','sfDoctrineAssetsLibraryPlugin','swFormExtraPlugin','swToolboxPlugin');
 
 
   * Set settings value in the general app.yml
       
       [yml]
       all:
-        swDoctrineAssetsLibrary:
+        sfDoctrineAssetsLibrary:
           upload_dir: uploads
           check_type:       false                                        # Set to true if you want to restrict the type of assets
           types:            ['image', txt, archive, pdf, xls, doc, ppt]  # Accepted asset types if check_type is true
@@ -62,5 +62,5 @@ Installation
   * If you want to use the jQuery widget, don't forget to include the javascript file in your module view.yml
       [yml]
       all:
-        javascripts: [/swDoctrineAssetsLibraryPlugin/js/assetSelectJQuery]
+        javascripts: [/sfDoctrineAssetsLibraryPlugin/js/assetSelectJQuery]
       

@@ -179,7 +179,7 @@ abstract class PluginsfAssetFolder extends BasesfAssetFolder
       }
     }
 
-    $dirs = sfFinder::type('dir')->maxdepth(0)->discard(sfConfig::get('app_swDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail'))->ignore_version_control()->in($base_folder);
+    $dirs = sfFinder::type('dir')->maxdepth(0)->discard(sfConfig::get('app_sfDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail'))->ignore_version_control()->in($base_folder);
     $folders = $this->getSubfoldersWithFolderNames();
 
     foreach($dirs as $dir)

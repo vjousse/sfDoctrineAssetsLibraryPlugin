@@ -160,7 +160,7 @@ abstract class PluginsfAsset extends BasesfAsset
 
     $this->setFilesize(((int) filesize($asset_path) / 1024));
     $this->autoSetType();
-    if (sfConfig::get('app_swDoctrineAssetsLibrary_check_type', false) && !in_array($this->getType(), sfConfig::get('app_swDoctrineAssetsLibrary_types', array('image', 'txt', 'archive', 'pdf', 'xls', 'doc', 'ppt'))))
+    if (sfConfig::get('app_sfDoctrineAssetsLibrary_check_type', false) && !in_array($this->getType(), sfConfig::get('app_sfDoctrineAssetsLibrary_types', array('image', 'txt', 'archive', 'pdf', 'xls', 'doc', 'ppt'))))
     {
       throw new sfAssetException('Filetype "%type%" not allowed', array('%type%' => $this->getType()));
     }
@@ -186,7 +186,7 @@ abstract class PluginsfAsset extends BasesfAsset
     if ($this->isImage())
     {
       // Add path to the thumbnails
-      foreach (sfConfig::get('app_swDoctrineAssetsLibrary_thumbnails', array(
+      foreach (sfConfig::get('app_sfDoctrineAssetsLibrary_thumbnails', array(
         'small' => array('width' => 84, 'height' => 84, 'shave' => true),
         'large' => array('width' => 194, 'height' => 152)
       )) as $key => $params)
@@ -314,28 +314,28 @@ public function getImageSrc($thumbnail_type='full', $relative_path=null)
       switch($this->getType())
       {
         case 'txt':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/txt.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/txt.png';
         break;
         case 'xls':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/xls.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/xls.png';
         break;
         case 'doc':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/doc.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/doc.png';
         break;
         case 'pdf':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/pdf.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/pdf.png';
         break;
         case 'html':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/html.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/html.png';
         break;
         case 'archive':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/archive.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/archive.png';
         break;
         case 'bin':
-        $src = '/swDoctrineAssetsLibraryPlugin/images/bin.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/bin.png';
         break;
         default:
-        $src = '/swDoctrineAssetsLibraryPlugin/images/unknown.png';
+        $src = '/sfDoctrineAssetsLibraryPlugin/images/unknown.png';
       }
     }
   }

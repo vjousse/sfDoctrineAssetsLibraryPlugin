@@ -1,8 +1,8 @@
 all:
-  stylesheets: [%SF_ADMIN_WEB_DIR%/css/main, /swDoctrineAssetsLibraryPlugin/css/media]
+  stylesheets: [%SF_ADMIN_WEB_DIR%/css/main, /sfDoctrineAssetsLibraryPlugin/css/media]
 
 listSuccess:
-  javascripts: [/swDoctrineAssetsLibraryPlugin/js/popup]
+  javascripts: [/sfDoctrineAssetsLibraryPlugin/js/popup]
 
 searchSuccess:
-  javascripts: [/swDoctrineAssetsLibraryPlugin/js/popup]
+  javascripts: [/sfDoctrineAssetsLibraryPlugin/js/popup]

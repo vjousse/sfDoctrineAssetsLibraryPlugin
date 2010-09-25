@@ -81,10 +81,10 @@ class sfAssetsLibraryTools
     }
     else
     {
-      $info['icon'] = '/swDoctrineAssetsLibraryPlugin/images/unknown.png';
+      $info['icon'] = '/sfDoctrineAssetsLibraryPlugin/images/unknown.png';
       if (is_readable(sfConfig::get('sf_web_dir').'/sfAssetsLibraryPlugin/images/'.$info['ext'].'.png'))
       {
-        $info['icon'] = '/swDoctrineAssetsLibraryPlugin/images/'.$info['ext'].'.png';
+        $info['icon'] = '/sfDoctrineAssetsLibraryPlugin/images/'.$info['ext'].'.png';
       }
     }
 
@@ -119,7 +119,7 @@ class sfAssetsLibraryTools
     }
     $parentDirName = ($parentDirName)? rtrim($parentDirName, '/') . '/' : '';
     $absCurrentDir = self::getMediaDir(true).$parentDirName.$dirName;
-    $absThumbDir   = $absCurrentDir.DIRECTORY_SEPARATOR.sfConfig::get('app_swDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail');
+    $absThumbDir   = $absCurrentDir.DIRECTORY_SEPARATOR.sfConfig::get('app_sfDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail');
     $mkdir_success = true;
     try
     {
@@ -189,7 +189,7 @@ class sfAssetsLibraryTools
   public static function getAssetFromUrl($url)
   { 
     
-    $url = str_replace(sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media'), '', $url);
+    $url = str_replace(sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media'), '', $url);
     $url = rtrim($url, '/');
     $parts = explode('/', $url);
     $filename = array_pop($parts);
@@ -204,7 +204,7 @@ class sfAssetsLibraryTools
   
   public static function getMediaDir($file_system = false)
   {
-    $upload_dir = rtrim(sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media'), '/').'/';
+    $upload_dir = rtrim(sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media'), '/').'/';
     if ($file_system)
     {
       return sfConfig::get('sf_web_dir') . DIRECTORY_SEPARATOR;
@@ -223,7 +223,7 @@ class sfAssetsLibraryTools
    */
   public static function getThumbnailDir($path)
   {
-    $thumb_dir = $path . '/' . sfConfig::get('app_swDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail');
+    $thumb_dir = $path . '/' . sfConfig::get('app_sfDoctrineAssetsLibrary_thumbnail_dir', 'thumbnail');
     
     return rtrim($thumb_dir, '/').'/';
   }
@@ -251,7 +251,7 @@ class sfAssetsLibraryTools
   public static function createThumbnails($folder, $filename)
   {
     $source = self::getThumbnailPath($folder, $filename, 'full');
-    $thumbnailSettings = sfConfig::get('app_swDoctrineAssetsLibrary_thumbnails', array(
+    $thumbnailSettings = sfConfig::get('app_sfDoctrineAssetsLibrary_thumbnails', array(
       'small' => array('width' => 84, 'height' => 84, 'shave' => true),
       'large' => array('width' => 194, 'height' => 152)
     ));
@@ -273,7 +273,7 @@ class sfAssetsLibraryTools
   {
     if (class_exists('sfThumbnail') and file_exists($source))
     {
-      if(sfConfig::get('app_swDoctrineAssetsLibrary_use_ImageMagick', false))
+      if(sfConfig::get('app_sfDoctrineAssetsLibrary_use_ImageMagick', false))
       {
         $adapter = 'sfImageMagickAdapter';
         $mime = 'image/jpg';

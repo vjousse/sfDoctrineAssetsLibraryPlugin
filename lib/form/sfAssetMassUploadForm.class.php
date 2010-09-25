@@ -23,7 +23,7 @@ class sfAssetMassUploadForm extends sfForm
     $form = new sfAssetForm;
     $form->widgetSchema['folder_id'] = new sfWidgetFormInputHidden;
 
-    $this->embedFormForEach('sfAsset', $form, sfConfig::get('app_swDoctrineAssetsLibrary_mass_upload_size', 5));
+    $this->embedFormForEach('sfAsset', $form, sfConfig::get('app_sfDoctrineAssetsLibrary_mass_upload_size', 5));
   }
 
   public function bind(array $taintedValues = array(), array $taintedFiles = array())

@@ -1,5 +1,5 @@
 <div class="form-row">
-  <?php echo image_tag('/swDoctrineAssetsLibraryPlugin/images/magnifier.png', 'align=top') ?>
+  <?php echo image_tag('/sfDoctrineAssetsLibraryPlugin/images/magnifier.png', 'align=top') ?>
   <a onclick="document.getElementById('sf_asset_search').style.display='block'; return false;" href="#"><?php echo __('Search', null, 'sfAsset'); ?></a>
 </div>
 

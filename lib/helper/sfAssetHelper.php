@@ -64,7 +64,7 @@ function link_to_asset_action($text, $asset)
 function init_asset_library()
 {
   //use_helper('Javascript');
-  use_javascript('/swDoctrineAssetsLibraryPlugin/js/main', 'last');
+  use_javascript('/sfDoctrineAssetsLibraryPlugin/js/main', 'last');
 
   echo '<script type="text/javascript">';
   echo 'sfAssetsLibrary.init(\''.url_for('sfAsset/list?popup=2').'\')';
@@ -83,7 +83,7 @@ function object_input_sf_asset_tag($object, $method, $options = array())
 function input_sf_asset_tag($name, $value, $options = array())
 {
   use_helper('Form', 'I18N');
-  use_javascript('/swDoctrineAssetsLibraryPlugin/js/main', 'last');
+  use_javascript('/sfDoctrineAssetsLibraryPlugin/js/main', 'last');
   $options = _convert_options($options);
   $type = 'all';
   if (isset($options['images_only']))
@@ -105,12 +105,12 @@ function input_sf_asset_tag($name, $value, $options = array())
   
   // The popup should open in the currently selected subdirectory
   $html  = input_tag($name, $value, $options) . '&nbsp;';
-  $html .= image_tag('/swDoctrineAssetsLibraryPlugin/images/folder_open', array(
+  $html .= image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder_open', array(
     'alt' => __('Insert Image'), 
     'style' => 'cursor: pointer; vertical-align: middle', 
     'onclick' => "
       initialDir = document.getElementById('".$options['id']."').value.replace(/\/[^\/]*$/, '');
-      if(!initialDir) initialDir = '".sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media')."';
+      if(!initialDir) initialDir = '".sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media')."';
       sfAssetsLibrary.openWindow({
         form_name: ".$form_name.",
         field_name: '".$name."',
@@ -125,7 +125,7 @@ function input_sf_asset_tag($name, $value, $options = array())
 
 function init_assets_library_popup()
 {
-  use_javascript('/swDoctrineAssetsLibraryPlugin/js/main', 'last');
+  use_javascript('/sfDoctrineAssetsLibraryPlugin/js/main', 'last');
 
   return javascript_tag('sfAssetsLibrary.init(\''.url_for('sfAsset/list').'?popup=2'.'\')');
 }

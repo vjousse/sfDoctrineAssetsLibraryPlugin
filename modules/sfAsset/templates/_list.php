@@ -6,7 +6,7 @@
 <?php if (!$folder->getNode()->isRoot()): ?>
   <div class="assetImage">
     <div class="thumbnails">
-      <?php echo link_to_asset(image_tag('/swDoctrineAssetsLibraryPlugin/images/up', 'size=64x64 title='.__('Parent directory', null, 'sfAsset')), 'sfAsset/list?dir='. $folder->getParentPath()) ?>
+      <?php echo link_to_asset(image_tag('/sfDoctrineAssetsLibraryPlugin/images/up', 'size=64x64 title='.__('Parent directory', null, 'sfAsset')), 'sfAsset/list?dir='. $folder->getParentPath()) ?>
     </div>
     <div class="assetComment" id="ajax_dir_0">..</div>
   </div>
@@ -17,7 +17,7 @@
     <div class="assetImage">
       <div class="thumbnails">
         <?php echo link_to_asset(
-          image_tag('/swDoctrineAssetsLibraryPlugin/images/folder', 'size=64x64 title='.$dir->getName()), 
+          image_tag('/sfDoctrineAssetsLibraryPlugin/images/folder', 'size=64x64 title='.$dir->getName()), 
           '@sf_asset_library_dir?dir='.$dir->getRelativePath()) 
         ?>
       </div>

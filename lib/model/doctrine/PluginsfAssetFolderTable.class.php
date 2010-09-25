@@ -24,7 +24,7 @@ class PluginsfAssetFolderTable extends Doctrine_Table
   public static function createRoot()
   {
     $folder = new sfAssetFolder();
-    $folder->setName(sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media'));
+    $folder->setName(sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media'));
 
     try
     {
@@ -162,7 +162,7 @@ class PluginsfAssetFolderTable extends Doctrine_Table
   public static function cleanPath($path)
   {
     $path = trim($path, '/');
-    $root_name = sfConfig::get('app_swDoctrineAssetsLibrary_upload_dir', 'media');
+    $root_name = sfConfig::get('app_sfDoctrineAssetsLibrary_upload_dir', 'media');
     if(!$path)
     {
       $path = $root_name;
